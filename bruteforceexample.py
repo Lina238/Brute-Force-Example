@@ -20,13 +20,13 @@ chars = "abcdefghijklmnopqrstuvwxyz0123456789"
 
 def main():
     while True:
-        if "correct_pass.txt" in os.listdir():
+        if "correctone.txt" in os.listdir():
             break
         valid = False
         while not valid:
             rndpasswd = random.choices(chars, k=2)
             passwd = "".join(rndpasswd)
-            file = open("tries.txt", 'r')
+            file = open("passwords.txt", 'r')
             tries = file.read()
             file.close()
             if passwd in tries:
