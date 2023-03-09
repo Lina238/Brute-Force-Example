@@ -37,13 +37,13 @@ def main():
         r = send_request(username, passwd)
 
         if 'failed to login' in r.text.lower():
-            with open("tries.txt", "a") as f:
+            with open("passwords.txt", "a") as f:
                 f.write(f"{passwd}\n")
                 f.close()
             print(f"Incorrect {passwd}\n")
         else:
             print(f"Correct Password {passwd}!\n")
-            with open("correct_pass.txt", "w") as f:
+            with open("correctone.txt", "w") as f:
                 f.write(passwd)
             break
 
